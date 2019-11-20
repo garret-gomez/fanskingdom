@@ -20,5 +20,32 @@ namespace StoreLibrary3
         public string BillingCountry { get; set; }
         public CustomerModel CardOwner { get; set; }
 
+    } 
+    //after clicking submit button checks all fields
+    {
+      if (CardOwner == "") 
+      { 
+          lblCardOwner.Text = String.Format("Required"); 
+      } 
+      else if (CarNumber == "") 
+      {
+          lblCardOwner.Text = String.Format("Required");
+      } 
+      else if (CardNumber.Text.Length < 16) 
+      {
+        lblCardNumber.Text = String.Format("Not a Valid Card Number");
+      } 
+      else if (CardType.Text == "Master Card" && (txtCreditNum.Text.StartsWith("51") || txtCreditNum.Text.StartsWith("52") || txtCreditNum.Text.StartsWith("53") || txtCreditNum.Text.StartsWith("54")) == false) 
+      {
+          lblCardNumber.Text = String.Format("Not correct Master Card number");
+      } 
+      else if (CardType.Text == "Visa" && txtCreditNum.Text.StartsWith("4") == false) 
+      {
+          lblCardType.Text = String.Format("Not correct Visa number");
+      } 
+      else 
+      { 
+          //display confirmation
+      }
     }
 }
