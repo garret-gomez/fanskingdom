@@ -43,6 +43,38 @@ namespace StoreLibrary3
       {
           lblCardType.Text = String.Format("Not correct Visa number");
       } 
+      elseif (CardExpMO = " ") 
+      {
+          lblCardExpMo.Text = String.Format("Required");
+      } 
+      elseif (CardExpYr = " ")
+      {
+          lblCardExpYr.Text = String.Format("Required");
+      } 
+      elseif (BillingAdress.Text = " ")
+      {
+          lblBillingAddress.Text = String.Format("Required");
+      } 
+      elseif (BillingCity.Text = "")
+      {
+          lblBillingCity.Text = String.Format("Required");
+      } 
+      elseif (BillingState = "")
+      {
+          lblBillingState.Text = String.Format("Required");
+      } 
+      elseif (BillingPostalCode.Text = "")
+      {
+          lblBillingPostalCode.Text = String.Format("Required");
+      } 
+      elseif (BillingPostalCode.Text.Length < 5)
+      {
+          lblBillingPostalCode.Text = String.Format("Invalid postal code");
+      }
+      elseif (BillingCountry = "")
+      {
+          lblBillingCountry.Text = String.Format("Required");
+      }
       else 
       { 
           //display confirmation
